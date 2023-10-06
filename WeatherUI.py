@@ -24,7 +24,6 @@ def return_key(event):
     response = urlopen("https://api.openweathermap.org/data/2.5/weather?zip=" + zipcode + "&appid=310f40723630e5becce6757a5dacd2c6&units=imperial") 
     string = response.read().decode('utf-8')
     info = json.loads(string)
-    print(info)
 
     name = str(info['name'])
     temp = round(float(info['main']['temp']))
@@ -38,7 +37,6 @@ def return_key(event):
     string2 = response2.content.decode('utf-8') 
     info2 = json.loads(string2)                 
     timezone = str(info2['timezone_location'])          
-    print(timezone)
 
 # Displays real time
     def update_time():
